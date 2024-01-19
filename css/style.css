@@ -1,0 +1,645 @@
+/* обращения к каждому тегу (обязательно) */
+*,
+*::after,
+*::before{
+    box-sizing: border-box;
+}
+
+/* вставляем шрифты всем */
+body{
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 14px;
+    line-height: 19px;
+    font-weight: 400;
+    color: #303030;
+}
+
+/* ссылка применяет цвет родителя header */
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+/* убираем точечки у списка */
+ul{
+    list-style: none;
+}
+
+/* указываем максимальную ширину для текста с отступами по бокам (2) */
+.container{
+    max-width: 1220px;
+    padding: 0 10px;
+    margin: 0 auto;
+}
+
+/* указываем всё о услугах (2) */
+.title{
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 33px;
+    color: #868585;
+    margin-bottom: 60px; /* везде такой отступ, так что можно использовать */
+    text-transform: uppercase; /* текст всегда будет начинаться с большой буквы */
+}
+
+/* указываем всё начало (основное) */
+.header{
+    /* задаём фоновое изображение */
+    background-image: url(../images/back.jpg);
+    /* растягиваем изображение для всех экранов */
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    /* задать цвет элементам */
+    color: #fff;
+    /* выравниваю тест */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    /* раскидываем элементы */
+    justify-content: space-between;
+    padding: 70px 10px 38px;
+    /* вторая часть макета */
+    margin-bottom: 150px;
+}
+
+/* указываем всё о подзаголовке */
+.header__subtitle{
+    font-size: 18px;
+    line-height: 25px;
+    font-weight: 400;
+    /* опускаем немного ниже к h1 */
+    margin-top: auto;
+}
+
+/* указываем всё о заголовке */
+.header__title{
+    font-weight: 700;
+    line-height: 87px;
+    font-size: 64px;
+}
+
+/* указываем всё о второй часто заголовка */
+.header__title span{
+    display: block; /* занимает всю территорию родителя */
+    font-size: 42px;
+    line-height: 57px;
+}
+
+/* отталкивание строк друг от друга, чтобы нормально встали по середине */
+.header__botton{ 
+    margin-top: 50px;
+    margin-bottom: auto;
+    align-self: center;
+}
+
+/* добавляем плавности */
+.botton__path{
+    transition: fill .5s;
+}
+
+/* меняет цвет при наведении на кнопку */
+.botton:hover .botton__path{ 
+    fill: #A9A32A;
+}
+
+/* сдвигаем тест к кнопке */
+.botton__text{ 
+    font-size: 18px;
+    line-height: 25px;
+    display: inline-block;
+    transform: translateY(-17px);
+    margin-left: -57px;
+}
+
+/* соц.сети распределяем по вертикали */
+.social{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* расстояния между соц.сетями */
+.social__item{
+    padding: 0 10px;
+}
+
+/* найстройка отступов (2) */
+.service{
+    margin-bottom: 150px;
+}
+
+/* разделяем части на лево и право (2) */
+.service__inner{
+    display: flex;
+}
+
+/* настраиваем текст (2) */
+.service__content{
+    flex-basis: 510px;
+    margin-right: 90px;
+}
+
+/* расстояние между заголовками (2) */
+.service__box{
+    margin-bottom: 50px;
+}
+
+/* расстояние между текстом и заголовками (2) */
+.service__box-title{
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 25px;
+    margin-bottom: 15px;
+}
+
+/* помогаем картинке оставаться красивой, а не быть растянутой по холсту (2) */
+/* ВЖУХ */
+.service__img{
+    object-fit: cover;
+}
+
+/* начало третьего макета */
+/* отступ вниз от третьего макета */
+.info{
+    margin-bottom: 150px;
+}
+/* разделяем части на право и лево (3) */
+.info__inner{
+    display: flex;
+}
+/* расстояние между частями (3) */
+.info__box{
+    flex-basis: 510px;
+    margin-right: 90px;
+}
+/* параметр для право части (3) */
+.info__content{
+    flex-basis: 600px;
+}
+/* шрифт и параметры для текта (3) */
+.info__content-text{
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 25px;
+    margin-bottom: 17px;
+}
+/* расстояние между блоками(3)*/
+.info-tabs{
+    margin-bottom: 100px;
+}
+/* расстояние между переключателями и слайдером (3)*/
+.info-tabs__items{
+    margin-bottom: 120px;
+}
+/* параметры для переключателей(3) */
+.info-tabs__item{
+    font-size: 18px;
+    line-height: 25px;
+    margin-right: 40px;
+}
+/* нижнее подчеркивание (3)*/
+.info-tabs__item--active{
+    border-bottom: 1px solid #303030;
+}
+/* убираем лишний контент, чтобы не показывалось всё в одной куче (3)*/
+.info-tabs__content{
+    display: none;
+}
+/* показывает тот констент, который активен в данной вкладке (3) */
+.info-tabs__content--active{
+    display: block;
+}
+/* место для текста в слайдерах (3) */
+.info-slider{
+    max-width: 510px;
+}
+/* место картинке на слайдере (3) */
+.info-slider__img{
+    margin-right: 40px;
+    float: left;
+}
+/* как далеко нужно уйти вниз нижнему объекту(3) */
+.info-slider__text{
+    padding-bottom: 15px;
+}
+/* обращение к стрелкам(3) */
+.slick-arrow{
+    position: absolute;
+    left: 275px;
+    bottom: -3px;
+    z-index: 5;
+    cursor: pointer;
+}
+/* правой стрелке куда идти (топ-топ3) */
+.slick-right{
+    left: 340px;
+}
+/* расположение нижнего листа с текстом(3) */
+.info__list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+/* расстояние этого текста(3) */
+.info__list-item{
+    flex-basis: 235px;
+    margin-bottom: 17px;
+}
+/* параметры для заголовков(3) */
+.info__list-title{
+    margin-bottom: 5px;
+    font-size: 18px;
+    line-height: 25px;
+    font-weight: 700;
+}
+
+/* четвертая часть макета */
+/* параметры для картинки (4)*/
+.blockquote{
+    padding: 128px 10px 144px;
+    background-image: url(../images/back5.jpg);
+    text-align: center;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    /* стандартный отступ от 4 макета вниз(5) */
+    margin-bottom: 150px;
+}
+/* параметры для текста(4) */
+.blockquote__text{
+    max-width: 670px;
+    margin: 0 auto;
+    font-size: 42px;
+    line-height: 57px;
+    color: #fff;
+}
+/* отступ вниз от 5 макета */
+.clients{
+    margin-bottom: 150px;
+}
+/* великое разделение! (5) */
+.clients-slider__box{
+    display: flex;
+}
+/* параметры для картинки. логично(5) */
+.clients-slider__box-img{
+    flex-basis: 510px;
+    margin-right: 90px;
+    /* стрелки должны упасть(5) */
+    margin-bottom: 30px;
+}
+/* параметры для заголовка(5) */
+.clients-slider__box-title{
+    max-width: 478px;
+    font-size: 18px;
+    line-height: 25px;
+    font-weight: 700;
+    /* отступ от заголовка(5) */
+    margin-bottom: 30px;
+}
+/* отступ от картинки - для списка, отступ вниз от списка(5) */
+.clients-slider__box-list{
+    margin-left: 50px;
+    margin-bottom: 50px;
+}
+/* отступ между пунктами списка(5) */
+.clients-slider__box-item{
+    margin-bottom: 15px;
+}
+/* хочу плавность для стрелок(3 и 5) */
+.slick-arrow path{
+    transition: fill .5s;
+}
+/* меняем цвет стрелок на указанный в макете(3 и 5) */
+.slick-arrow:hover path{
+    fill: #A9A32A;
+}
+/* отстууп вниз, всё как обычно(6) */
+.step{
+    margin-bottom: 150px;
+}
+/* зачем я продолжаю писать комментарии?(6) */
+.step__inner{
+    display: flex;
+}
+/* параметры для картинки(6) */
+.step__img{
+    flex-basis: 600px;
+    object-fit: cover;
+}
+/* отступ разделений(6) */
+.step__content{
+    margin-right: 90px;
+}
+/* создаём нумерацию, как в макете(6) */
+.step__list{
+    list-style: none;
+    counter-reset: number;
+}
+/* чтобы шла там, где нужно(6) */
+.step__list-item{
+    counter-increment: number;
+    margin-bottom: 30px;
+}
+/* задаём, чтобы работала наша задумка с нулём в начале(6) */
+.step__list-item::before{
+    content: '0' counter(number);
+    margin-bottom: 11px;
+    color: #868585;
+}
+/* задаю (на всякий случай) если вдруг таких лишек станет больше больше 10*/
+.step__list-item:nth-child(n + 10)::before{
+    content: counter(number);
+}
+/* параметры для заголовков списка(6) */
+.step__list-title{
+    margin-bottom: 2px;
+    font-size: 18px;
+    line-height: 25px;
+    font-weight: 700;
+}
+/* параметры для картинки(7) */
+.footer{
+    background-image: url(../images/back8.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 70px 0 50px;
+    color: #fff;
+}
+/* параметры для верха(7) */
+.footer__top{
+    display: flex;
+    margin-bottom: 150px;
+}
+/* стилизуем верхнюю часть(7) */
+.footer__form{
+    flex-basis: 510px;
+    margin-right: 90px;
+}
+/* наводим красоту в левой части верха(7) */
+.footer__title{
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 43px;
+    text-transform: uppercase;
+    margin-bottom: 60px;
+}
+/* для линий и текста там(7) */
+.footer__input{
+    border: none;
+    border-bottom: 1px solid #fff;
+    display: block;
+    width: 100%;
+    background-color: transparent;
+    padding-bottom: 11px;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 14px;
+    line-height: 19px;
+    color: #fff;
+    margin-bottom: 60px;
+}
+/* нужно, чтобы видный текст был виден вообще(7) */
+.footer__input::placeholder{
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 14px;
+    line-height: 19px;
+    color: #fff;
+}
+/* параметры ждя кнопки(7) */
+.footer__form-btn{
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    color: #fff;
+}
+/* настройка правой части(7) */
+.footer__contacts-item{
+    font-size: 18px;
+    line-height: 25px;
+    margin-bottom: 30px;
+}
+/* настройка нижней части(7) */
+.footer__bottom{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/* убираем не нужный мне отступ(7) */
+.footer .social{
+    margin-right: -10px;
+}
+
+/* 43 минута 24 минута*/
+/* создаём адаптив */ /* медиа запрос (самое главное - соблюдать иерархию) */
+@media (max-width: 1240px){
+    .info__inner{
+        flex-wrap: wrap-reverse;
+    }
+    .info__content{
+        width: 100%;
+    }
+    .info__content-img{
+        display: none;
+    }
+    .info__box{
+        flex-basis: 100%;
+        margin-right: 0;
+        display: flex;
+    }
+    .info__list{
+        align-self: start;
+        margin-left: 40px;
+    }
+    .info__tabs__items{
+        margin-bottom: 40px;
+    }
+}
+@media (max-width: 1024px){
+    .service__inner{
+        flex-wrap: wrap;
+    }
+    .service__content{
+        flex-basis: 100%;
+        margin-right: 0;
+    }
+    .service__img{
+        width: 100%;
+        height: 400px;
+    }
+    .step__inner{
+        flex-wrap: wrap;
+    }
+    .step__content{
+        margin-right: 0;
+    }
+    .step__img{
+        object-fit: cover;
+        height: 400px;
+        flex-basis: 100%;
+        max-width: 100%;
+    }
+}
+@media (max-width: 960px){
+    .clients-slider__box{
+        display: block;
+    }
+    .clients-slider__box-title{
+        max-width: 100%;
+    }
+    .clients-slider__box-img{
+        width: 100%;
+        object-fit: cover;
+        height: 300px;
+        margin-right: 0;
+    }
+}
+@media (max-width: 826px){
+    .info__box{
+        display: block;
+    }
+    .info__list{
+        margin-left: 0;
+    }
+}
+@media (max-width: 768px){
+    .header__title{
+        font-size: 48px;
+        line-height: 56px;
+    }
+    .header__title span{
+        font-size: 32px;
+        line-height: 40px;
+    }
+    .blockquote{
+        padding: 60px 10px 80px;
+    }
+    .blockquote__text{
+        font-size: 28px;
+        line-height: 32px;
+    }
+    .footer__bottom{
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+    }
+    .footer__bottom .logo{
+        width: 100%;
+        margin: 20px 0;
+    }
+    .footer__top{
+        flex-wrap: wrap;
+    }
+    .footer__form{
+        flex-basis: 100%;
+        margin-right: 0;
+        margin-bottom: 40px;
+    }
+}
+@media (max-width: 640px){
+    .header,
+    .service,
+    .info,
+    .blockquote,
+    .clients,
+    .step,
+    .footer__top{
+        margin-bottom: 75px;
+    }
+}
+@media (max-width: 540px){
+    .header__title{
+        font-size: 32px;
+        line-height: 38px;
+    }
+    .header__title span{
+        font-size: 22px;
+        line-height: 28px;
+    }
+    .header__subtitle{
+        font-size: 16px;
+        line-height: 22px;
+    }
+    .clients-slider__box-list{
+        margin-left: 0;
+    }
+    .info-slider{
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    .info-slider__img{
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 25px;
+        float: none;
+        height: 200px;
+        object-fit: cover;
+    }
+    .slick-left{
+        left: calc(50% - 50px);
+    }    
+    .slick-right{
+        left: calc(50% + 10px);
+    }
+    .info__list{
+        display: block;
+    }
+    .info-tabs__item{
+        margin-right: 0;
+        padding: 10px;
+        display: block;
+        text-align: center;
+    }
+}
+/* убираем некоторые проблемы */
+@media(max-width: 375px){
+    .botton__text{
+        margin-left: -76px;
+    }
+    .title{
+        margin-bottom: 40px;
+    }
+    .service__box{
+        margin-bottom: 30px;
+    }
+    .blockquote__text{
+        font-size: 22px;
+        line-height: 28px;
+    }
+}
+@media(max-width: 340px){
+    .info-slider{
+        width: 280px;
+    }  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
